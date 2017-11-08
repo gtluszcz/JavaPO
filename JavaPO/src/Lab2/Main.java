@@ -21,7 +21,7 @@ public class Main {
 
         Matrix matrix2 = new Matrix(d);
         Matrix matrix4 = new Matrix(f);
-//        System.out.println(matrix2.toString());
+        System.out.println(matrix2.toString());
 //        Matrix matrix3 = new Matrix(matrix2.asArray());
 //        System.out.println(matrix3.toString());
 //        matrix3.set(3,2,9);
