@@ -301,7 +301,7 @@ public class Matrix {
         }
         else {
         double[][] first = this.asArray();
-        double[][] tmp = new double[this.rows][this.cols];
+        double[][] tmp = new double[this.rows][1];
         for (int e=0;e<this.rows;e++){
             for (int q=0;q<this.cols;q++){
                 if (q==i){
