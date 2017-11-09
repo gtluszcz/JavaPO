@@ -295,4 +295,24 @@ public class Matrix {
         return sum;
     }
 
+    Matrix getColumn(int i){
+        if(this.cols<i+1) {
+            throw new RuntimeException(String.format("Zły numer kolumny"));
+        }
+        else {
+        double[][] first = this.asArray();
+        double[][] tmp = new double[this.rows][this.cols];
+        for (int e=0;e<this.rows;e++){
+            for (int q=0;q<this.cols;q++){
+                if (q==i){
+                    tmp[e][q]=first[e][q];
+                }
+            }
+        }
+
+        return new Matrix(tmp);
+        }
+
+    }
+
 }
