@@ -305,7 +305,7 @@ public class Matrix {
         for (int e=0;e<this.rows;e++){
             for (int q=0;q<this.cols;q++){
                 if (q==i){
-                    tmp[e][q]=first[e][q];
+                    tmp[e][0]=first[e][q];
                 }
             }
         }

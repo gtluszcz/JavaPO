@@ -35,7 +35,7 @@ public class Main {
 //        System.out.println(matrix2.dot(matrix4).toString());
 //        System.out.println(matrix2.frobenius());
         Matrix m = new Matrix(new double[][]{{1,2,3},{4,5,6},{7,8,9}});
-        System.out.println(m.getColumn(0));
+        System.out.println(m.getColumn(1));
     }
 }
 
