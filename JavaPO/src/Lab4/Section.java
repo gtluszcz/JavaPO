@@ -4,7 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section {
+public class Section{
     String title;
     List<Paragraph> paragraphs = new ArrayList<>() ;
 

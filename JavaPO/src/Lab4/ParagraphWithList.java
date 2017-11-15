@@ -16,7 +16,7 @@ public class ParagraphWithList extends Paragraph{
         return this;
     }
 
-    void writeHTML(PrintStream out){
+    public void writeHTML(PrintStream out){
 
         out.printf("<p>%s</p>\n",this.content);
         list.writeHTML(out);
