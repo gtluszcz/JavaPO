@@ -1,8 +1,10 @@
 package Lab4;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.io.PrintStream;
 
 public class ParagraphWithList extends Paragraph{
+    @XmlElement
     UnorderedList list = new UnorderedList();
 
     ParagraphWithList setContent(String text){
@@ -18,7 +20,7 @@ public class ParagraphWithList extends Paragraph{
 
     public void writeHTML(PrintStream out){
 
-        out.printf("<p>%s</p>\n",this.content);
+        out.printf("        <p>%s</p>\n",this.content);
         list.writeHTML(out);
     }
 }

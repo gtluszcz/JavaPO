@@ -1,6 +1,9 @@
 package Lab4;
 
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 public class Main {
 
@@ -20,7 +23,19 @@ public class Main {
                                     .addListItem("Java")
                     );
 
-            cv.writeHTML(System.out);
-        }
+            //cv.writeHTML(System.out);
 
-}
+            try{
+                cv.writeHTML(new PrintStream("cv.html","UTF-8"));
+
+            }catch(FileNotFoundException | UnsupportedEncodingException e){
+                e.printStackTrace();
+            }
+
+            cv.write("cv.xml");
+            //Document cv2 = Document.read("cv.xml");
+            //cv2.writeHTML(System.out);
+        }
+    }
+
+
