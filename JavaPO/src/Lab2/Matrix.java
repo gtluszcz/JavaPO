@@ -296,7 +296,7 @@ public class Matrix {
     }
 
     Matrix getColumn(int i){
-        if(this.cols<i+1) {
+        if(this.cols<i+1 || i<0) {
             throw new RuntimeException(String.format("Zły numer kolumny"));
         }
         else {

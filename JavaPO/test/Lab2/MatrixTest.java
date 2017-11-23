@@ -1,8 +1,48 @@
 package Lab2;
 
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+
+import java.util.Random;
+
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
+import static sun.misc.Version.println;
 
 public class MatrixTest {
+    @Test
+    public void getColumn() throws Exception {
+        Random random = new Random();
+        int rows = random.nextInt(100)+1;
+        int cols = random.nextInt(100)+1;
+        double[][] tab = new double[rows][cols];
+        for (int i=0;i<rows;i++){
+            for (int j=0;j<cols;j++){
+                tab[i][j]=random.nextInt(100)+1;
+            }
+        }
+
+        Matrix mat = new Matrix(tab);
+        System.out.println(mat.toString());
+        ExpectedException thrown = ExpectedException.none();
+        for (int c=-1;c<=rows+1;c++) {
+            try {
+                Matrix colc = mat.getColumn(c);
+
+                for (int j=0;j<colc.cols;j++){
+                    assertEquals(mat.get(j,c),colc.get(j,0),0.001);
+                }
+
+            } catch (RuntimeException e) {
+
+            }
+
+
+        }
+
+
+    }
 
     private Matrix matrix1 = new Matrix(new double[][]{
             {1, 2, 3, 4},

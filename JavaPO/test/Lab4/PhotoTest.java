@@ -8,7 +8,6 @@ public class PhotoTest extends HtmlTagTest {
     @Test
     public void writeHTML() throws Exception {
         Photo photo = new Photo("http://example.com");
-
         String output = this.output(photo);
 
         assertTrue(output.contains("<img"));
