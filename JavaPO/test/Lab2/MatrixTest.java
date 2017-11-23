@@ -23,20 +23,17 @@ public class MatrixTest {
             }
         }
 
+
         Matrix mat = new Matrix(tab);
-        System.out.println(mat.toString());
-        ExpectedException thrown = ExpectedException.none();
+
         for (int c=-1;c<=rows+1;c++) {
+
             try {
                 Matrix colc = mat.getColumn(c);
-
                 for (int j=0;j<colc.cols;j++){
                     assertEquals(mat.get(j,c),colc.get(j,0),0.001);
                 }
-
-            } catch (RuntimeException e) {
-
-            }
+            } catch (RuntimeException e) {}
 
 
         }
