@@ -112,7 +112,7 @@ public class CSVReader {
 
 
     public boolean isMissing(int columnIndex) {
-        return columnIndex >= this.getRecordLength();
+        return columnIndex >= this.getRecordLength() || current[columnIndex].isEmpty();
     }
 
 
