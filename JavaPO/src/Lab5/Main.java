@@ -11,7 +11,9 @@ public class Main {
         try {
             AdminUnitList list = new AdminUnitList();
             list.read("admin-units.csv");
-            list.list(System.out,120000,-10);
+            //list.list(System.out,120000,-10);
+            list.fixAll();
+            list.selectByName("al",false).list(System.out);
         } catch (IOException e){
             System.out.print(e.getMessage());
         }

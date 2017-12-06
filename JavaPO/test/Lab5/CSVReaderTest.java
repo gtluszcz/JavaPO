@@ -81,19 +81,16 @@ public class CSVReaderTest {
         CSVReader reader = new CSVReader(new StringReader(text),",",true);
         reader.next();
         try{
-            reader.get(20);
+            assertEquals("", reader.get(20));
         }catch(WrongColumnIndexException e){
-            indexexceptioncaught = true;
         }
 
         try{
             reader.get("d");
+            assertEquals("", reader.get("d"));
         }catch (WrongColumnLabelException e){
-            columnexcpetioncaught=true;
         }
 
-        assertEquals(true, indexexceptioncaught);
-        assertEquals(true, columnexcpetioncaught);
 
     }
 

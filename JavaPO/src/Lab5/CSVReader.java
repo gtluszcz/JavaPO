@@ -125,7 +125,7 @@ public class CSVReader {
 
     String get(int columnIndex) {
         if(columnIndex<0 || this.isMissing(columnIndex)){
-            throw new WrongColumnIndexException();
+            return "";
         }
         return this.current[columnIndex];
     }
