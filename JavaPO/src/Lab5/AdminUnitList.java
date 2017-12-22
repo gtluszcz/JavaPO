@@ -199,6 +199,14 @@ public class AdminUnitList {
 
     AdminUnitList filter(Predicate<AdminUnit> pred,int offset, int limit){
         AdminUnitList ret = this.filter(pred);
+
+        if (limit+offset>ret.units.size())
+            limit=ret.units.size()-offset;
+
+        if (limit<=0){
+            throw new RuntimeException("illegal arguments");
+        }
+
         ret.units = ret.units.subList(offset,offset+limit);
         return ret;
     }
