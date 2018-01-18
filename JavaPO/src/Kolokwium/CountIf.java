@@ -58,7 +58,7 @@ public class CountIf {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.printf(Locale.US,"%d-%d mean=%d\n",start,end,ilosc);
+            System.out.printf(Locale.US,"%d-%d ilosc spełaniających warunek=%d\n",start,end,ilosc);
         }
     }
 
@@ -90,7 +90,7 @@ public class CountIf {
             ilosc+=results.take();
         }
         double t3 = System.nanoTime()/1e6;
-        System.out.printf(Locale.US,"size = %d cnt=%d >  t2-t1=%f t3-t1=%f mean=%d\n",
+        System.out.printf(Locale.US,"size = %d cnt=%d >  t2-t1=%f t3-t1=%f ilosc spełaniających warunek=%d\n",
                 array.length,
                 cnt,
                 t2-t1,
